@@ -10,24 +10,25 @@ This R package provides easy access to college sports (NCAA) data via stats.ncaa
 
 Here are the list of sports that this package covers.
 
-    ##                      names  id
-    ## 1                 baseball MBA
-    ## 2          mens basketball MBB
-    ## 3                 football MFB
-    ## 4          mens ice hockey MIH
-    ## 5            mens lacrosse MLA
-    ## 6              mens soccer MSO
-    ## 7              mens tennis MTE
-    ## 8          mens volleyball MVB
-    ## 9        womens basketball WBB
-    ## 10            field hockey WFH
-    ## 11       womens ice hockey WIH
-    ## 12         womens lacrosse WLA
-    ## 13                softball WSB
-    ## 14           womens soccer WSO
-    ## 15 womens beach volleyball WSV
-    ## 16           womens tennis WTE
-    ## 17       womens volleyball WVB
+| names                   | id  |
+|:------------------------|:----|
+| baseball                | MBA |
+| mens basketball         | MBB |
+| football                | MFB |
+| mens ice hockey         | MIH |
+| mens lacrosse           | MLA |
+| mens soccer             | MSO |
+| mens tennis             | MTE |
+| mens volleyball         | MVB |
+| womens basketball       | WBB |
+| field hockey            | WFH |
+| womens ice hockey       | WIH |
+| womens lacrosse         | WLA |
+| softball                | WSB |
+| womens soccer           | WSO |
+| womens beach volleyball | WSV |
+| womens tennis           | WTE |
+| womens volleyball       | WVB |
 
 Also this package will scale to more years as the NCAA makes data available. Right now stats.ncaa.org is slowly providing more data! VERY EXCITING!
 
@@ -64,18 +65,13 @@ I like Texas A&M for obvious reasons. So we'll go with them, for reference the T
 TAMU Women Soccer's season stats in 2015 look like:
 
 ``` r
-team_season_stats(697, 2015, "Women's Soccer")
+kable(team_season_stats(697, 2015, "Women's Soccer"))
 ```
 
-    ##             Player Goals Assists Points ShAtt Fouls Red Cards Yellow Cards
-    ## 25          Totals    71      60    202   544   217        NA           10
-    ## 26 Opponent Totals    27      22     76   296   297         1           27
-    ##    GC Goal App GGS Goalie Min. Plyd GA   GAA Saves SV Pct Shutouts G Wins
-    ## 25 NA       NA  NA          148,148 27 0.984    87  0.763        9     NA
-    ## 26 NA       NA  NA          148,148 71 2.588   184  0.722        1     NA
-    ##    G Loss DSaves Corners PS PSA GWG year
-    ## 25     NA     NA     156  1   2  22 2015
-    ## 26     NA     NA     105  1   1   3 2015
+|     | Player          |  Goals|  Assists|  Points|  ShAtt|  Fouls|  Red Cards|  Yellow Cards| GC  |  Goal App|  GGS| Goalie Min. Plyd |   GA|    GAA|  Saves|  SV Pct|  Shutouts|  G Wins|  G Loss| DSaves |  Corners|   PS|  PSA|  GWG|  year|
+|-----|:----------------|------:|--------:|-------:|------:|------:|----------:|-------------:|:----|---------:|----:|:-----------------|----:|------:|------:|-------:|---------:|-------:|-------:|:-------|--------:|----:|----:|----:|-----:|
+| 25  | Totals          |     71|       60|     202|    544|    217|         NA|            10| NA  |        NA|   NA| 148,148          |   27|  0.984|     87|   0.763|         9|      NA|      NA| NA     |      156|    1|    2|   22|  2015|
+| 26  | Opponent Totals |     27|       22|      76|    296|    297|          1|            27| NA  |        NA|   NA| 148,148          |   71|  2.588|    184|   0.722|         1|      NA|      NA| NA     |      105|    1|    1|    3|  2015|
 
 Alright the Aggies had a good basketball team in 2015-2016, let's look at the player's season stat. Note for seasons Year1-Year2, Year2 is what you want to use in the functions. For example the 2015 to 2016 season is denoted for 2016.
 
@@ -104,73 +100,42 @@ kable(player_season_stats(697,2016,"MBB"))
 Lastly let's take a look at the schedule and results for the TAMU Women's VolleyBall team.
 
 ``` r
-team_schedule(697,2016,"womens volleyball")
+kable(team_schedule(697,2016,"womens volleyball"))
 ```
 
-    ##         team       Date                     Opponent    site OT result
-    ## 1  Texas A&M 08/28/2015                   @ Stanford    Away NA      L
-    ## 2  Texas A&M 08/29/2015 Minnesota @ Stanford, Calif. Neutral NA      W
-    ## 3  Texas A&M 09/05/2015            Abilene Christian    Home NA      W
-    ## 4  Texas A&M 09/05/2015                  Wichita St.    Home NA      W
-    ## 5  Texas A&M 09/06/2015               New Mexico St.    Home NA      W
-    ## 6  Texas A&M 09/11/2015  Milwaukee @ Iowa City, Iowa Neutral NA      W
-    ## 7  Texas A&M 09/11/2015   Iowa St. @ Iowa City, Iowa Neutral NA      L
-    ## 8  Texas A&M 09/12/2015                       @ Iowa    Away NA      L
-    ## 9  Texas A&M 09/15/2015                 Colorado St.    Home NA      W
-    ## 10 Texas A&M 09/18/2015                @ Florida St.    Away NA      L
-    ## 11 Texas A&M 09/19/2015                @ Florida A&M    Away NA      W
-    ## 12 Texas A&M 09/27/2015                     Arkansas    Home NA      L
-    ## 13 Texas A&M 09/30/2015                     @ Auburn    Away NA      W
-    ## 14 Texas A&M 10/04/2015                     Ole Miss    Home NA      W
-    ## 15 Texas A&M 10/09/2015                    @ Florida    Away NA      L
-    ## 16 Texas A&M 10/11/2015             @ South Carolina    Away NA      W
-    ## 17 Texas A&M 10/16/2015                      Alabama    Home NA      W
-    ## 18 Texas A&M 10/18/2015              Mississippi St.    Home NA      W
-    ## 19 Texas A&M 10/21/2015                          LSU    Home NA      W
-    ## 20 Texas A&M 10/30/2015                   @ Kentucky    Away NA      W
-    ## 21 Texas A&M 11/01/2015                  @ Tennessee    Away NA      W
-    ## 22 Texas A&M 11/04/2015                     Missouri    Home NA      W
-    ## 23 Texas A&M 11/08/2015                      Georgia    Home NA      W
-    ## 24 Texas A&M 11/13/2015                   @ Ole Miss    Away NA      W
-    ## 25 Texas A&M 11/15/2015            @ Mississippi St.    Away NA      W
-    ## 26 Texas A&M 11/18/2015                     Kentucky    Home NA      W
-    ## 27 Texas A&M 11/22/2015                      Florida    Home NA      W
-    ## 28 Texas A&M 11/25/2015                   @ Missouri    Away NA      W
-    ## 29 Texas A&M 11/28/2015                   @ Arkansas    Away NA      W
-    ## 30 Texas A&M 12/04/2015             A&M-Corpus Chris    Home NA      W
-    ## 31 Texas A&M 12/05/2015                       Hawaii    Home NA      L
-    ##    Score team_score opp_score win loss
-    ## 1  0 - 3          0         3   0    1
-    ## 2  3 - 2          3         2   1    1
-    ## 3  3 - 1          3         1   2    1
-    ## 4  3 - 0          3         0   3    1
-    ## 5  3 - 2          3         2   4    1
-    ## 6  3 - 1          3         1   5    1
-    ## 7  1 - 3          1         3   5    2
-    ## 8  1 - 3          1         3   5    3
-    ## 9  3 - 2          3         2   6    3
-    ## 10 1 - 3          1         3   6    4
-    ## 11 3 - 0          3         0   7    4
-    ## 12 1 - 3          1         3   7    5
-    ## 13 3 - 0          3         0   8    5
-    ## 14 3 - 0          3         0   9    5
-    ## 15 0 - 3          0         3   9    6
-    ## 16 3 - 2          3         2  10    6
-    ## 17 3 - 0          3         0  11    6
-    ## 18 3 - 0          3         0  12    6
-    ## 19 3 - 0          3         0  13    6
-    ## 20 3 - 1          3         1  14    6
-    ## 21 3 - 0          3         0  15    6
-    ## 22 3 - 0          3         0  16    6
-    ## 23 3 - 0          3         0  17    6
-    ## 24 3 - 2          3         2  18    6
-    ## 25 3 - 0          3         0  19    6
-    ## 26 3 - 0          3         0  20    6
-    ## 27 3 - 2          3         2  21    6
-    ## 28 3 - 2          3         2  22    6
-    ## 29 3 - 1          3         1  23    6
-    ## 30 3 - 0          3         0  24    6
-    ## 31 0 - 3          0         3  24    7
+| team      | Date       | Opponent                     | site    | OT  | result | Score |  team\_score|  opp\_score|  win|  loss|
+|:----------|:-----------|:-----------------------------|:--------|:----|:-------|:------|------------:|-----------:|----:|-----:|
+| Texas A&M | 08/28/2015 | @ Stanford                   | Away    | NA  | L      | 0 - 3 |            0|           3|    0|     1|
+| Texas A&M | 08/29/2015 | Minnesota @ Stanford, Calif. | Neutral | NA  | W      | 3 - 2 |            3|           2|    1|     1|
+| Texas A&M | 09/05/2015 | Abilene Christian            | Home    | NA  | W      | 3 - 1 |            3|           1|    2|     1|
+| Texas A&M | 09/05/2015 | Wichita St.                  | Home    | NA  | W      | 3 - 0 |            3|           0|    3|     1|
+| Texas A&M | 09/06/2015 | New Mexico St.               | Home    | NA  | W      | 3 - 2 |            3|           2|    4|     1|
+| Texas A&M | 09/11/2015 | Milwaukee @ Iowa City, Iowa  | Neutral | NA  | W      | 3 - 1 |            3|           1|    5|     1|
+| Texas A&M | 09/11/2015 | Iowa St. @ Iowa City, Iowa   | Neutral | NA  | L      | 1 - 3 |            1|           3|    5|     2|
+| Texas A&M | 09/12/2015 | @ Iowa                       | Away    | NA  | L      | 1 - 3 |            1|           3|    5|     3|
+| Texas A&M | 09/15/2015 | Colorado St.                 | Home    | NA  | W      | 3 - 2 |            3|           2|    6|     3|
+| Texas A&M | 09/18/2015 | @ Florida St.                | Away    | NA  | L      | 1 - 3 |            1|           3|    6|     4|
+| Texas A&M | 09/19/2015 | @ Florida A&M                | Away    | NA  | W      | 3 - 0 |            3|           0|    7|     4|
+| Texas A&M | 09/27/2015 | Arkansas                     | Home    | NA  | L      | 1 - 3 |            1|           3|    7|     5|
+| Texas A&M | 09/30/2015 | @ Auburn                     | Away    | NA  | W      | 3 - 0 |            3|           0|    8|     5|
+| Texas A&M | 10/04/2015 | Ole Miss                     | Home    | NA  | W      | 3 - 0 |            3|           0|    9|     5|
+| Texas A&M | 10/09/2015 | @ Florida                    | Away    | NA  | L      | 0 - 3 |            0|           3|    9|     6|
+| Texas A&M | 10/11/2015 | @ South Carolina             | Away    | NA  | W      | 3 - 2 |            3|           2|   10|     6|
+| Texas A&M | 10/16/2015 | Alabama                      | Home    | NA  | W      | 3 - 0 |            3|           0|   11|     6|
+| Texas A&M | 10/18/2015 | Mississippi St.              | Home    | NA  | W      | 3 - 0 |            3|           0|   12|     6|
+| Texas A&M | 10/21/2015 | LSU                          | Home    | NA  | W      | 3 - 0 |            3|           0|   13|     6|
+| Texas A&M | 10/30/2015 | @ Kentucky                   | Away    | NA  | W      | 3 - 1 |            3|           1|   14|     6|
+| Texas A&M | 11/01/2015 | @ Tennessee                  | Away    | NA  | W      | 3 - 0 |            3|           0|   15|     6|
+| Texas A&M | 11/04/2015 | Missouri                     | Home    | NA  | W      | 3 - 0 |            3|           0|   16|     6|
+| Texas A&M | 11/08/2015 | Georgia                      | Home    | NA  | W      | 3 - 0 |            3|           0|   17|     6|
+| Texas A&M | 11/13/2015 | @ Ole Miss                   | Away    | NA  | W      | 3 - 2 |            3|           2|   18|     6|
+| Texas A&M | 11/15/2015 | @ Mississippi St.            | Away    | NA  | W      | 3 - 0 |            3|           0|   19|     6|
+| Texas A&M | 11/18/2015 | Kentucky                     | Home    | NA  | W      | 3 - 0 |            3|           0|   20|     6|
+| Texas A&M | 11/22/2015 | Florida                      | Home    | NA  | W      | 3 - 2 |            3|           2|   21|     6|
+| Texas A&M | 11/25/2015 | @ Missouri                   | Away    | NA  | W      | 3 - 2 |            3|           2|   22|     6|
+| Texas A&M | 11/28/2015 | @ Arkansas                   | Away    | NA  | W      | 3 - 1 |            3|           1|   23|     6|
+| Texas A&M | 12/04/2015 | A&M-Corpus Chris             | Home    | NA  | W      | 3 - 0 |            3|           0|   24|     6|
+| Texas A&M | 12/05/2015 | Hawaii                       | Home    | NA  | L      | 0 - 3 |            0|           3|   24|     7|
 
 Functionality
 -------------
@@ -178,16 +143,16 @@ Functionality
 This package should be functional for all sports except for Football. The next update should have full functionality for Football as well.
 
 There are three main functions that provide data of interest:
-(1) team\_season\_stats = Overall team stats
-(2) player\_season\_stats = Full season player stats
-(3) team\_schedule = Team Schedule/Result/Site/Record
+(1) team\_season\_stats = Overall team stats  
+(2) player\_season\_stats = Full season player stats   
+(3) team\_schedule = Team Schedule/Result/Site/Record  
 
 Future Work
 -----------
 
 I'm looking to add functionality. What you should expect shortly:
-(1) game\_by\_game = Team stats by game.
-(2) player\_ind\_stats = An individual player's stats by game.
-(3) College Football Functionality.
+(1) game\_by\_game = Team stats by game.   
+(2) player\_ind\_stats = An individual player's stats by game.  
+(3) College Football Functionality.  
 
 If you'd like to suggest anything (can be sport specific or general), create a github issue. Or tweet at me @msubbaiah1.
