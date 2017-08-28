@@ -1,8 +1,3 @@
-README
-================
-Meyappan Subbaiah
-August 28, 2017
-
 ncaaR
 =====
 
