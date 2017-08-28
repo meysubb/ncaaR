@@ -10,26 +10,24 @@ This R package provides easy access to college sports (NCAA) data via stats.ncaa
 
 Here are the list of sports that this package covers.
 
-<center>
-| names                   | id  |
-|:------------------------|:----|
-| baseball                | MBA |
-| mens basketball         | MBB |
-| football                | MFB |
-| mens ice hockey         | MIH |
-| mens lacrosse           | MLA |
-| mens soccer             | MSO |
-| mens tennis             | MTE |
-| mens volleyball         | MVB |
-| womens basketball       | WBB |
-| field hockey            | WFH |
-| womens ice hockey       | WIH |
-| womens lacrosse         | WLA |
-| softball                | WSB |
-| womens soccer           | WSO |
-| womens beach volleyball | WSV |
-| womens tennis           | WTE |
-| womens volleyball       | WVB |
+    ##                      names  id
+    ## 1                 baseball MBA
+    ## 2          mens basketball MBB
+    ## 3                 football MFB
+    ## 4          mens ice hockey MIH
+    ## 5            mens lacrosse MLA
+    ## 6              mens soccer MSO
+    ## 7              mens tennis MTE
+    ## 8          mens volleyball MVB
+    ## 9        womens basketball WBB
+    ## 10            field hockey WFH
+    ## 11       womens ice hockey WIH
+    ## 12         womens lacrosse WLA
+    ## 13                softball WSB
+    ## 14           womens soccer WSO
+    ## 15 womens beach volleyball WSV
+    ## 16           womens tennis WTE
+    ## 17       womens volleyball WVB
 
 Also this package will scale to more years as the NCAA makes data available. Right now stats.ncaa.org is slowly providing more data! VERY EXCITING!
 
@@ -69,65 +67,39 @@ TAMU Women Soccer's season stats in 2015 look like:
 team_season_stats(697, 2015, "Women's Soccer")
 ```
 
-    ##             Player Goals Assists Points ShAtt Fouls Red Cards Yellow Cards GC Goal App GGS Goalie Min. Plyd GA   GAA Saves SV Pct Shutouts G Wins G Loss DSaves Corners PS PSA GWG year
-    ## 25          Totals    71      60    202   544   217        NA           10  NA       NA  NA          148,148 27 0.984    87  0.763        9     NA NA     NA     156  1   2  22 2015
-    ## 26 Opponent Totals    27      22     76   296   297         1           27  NA       NA  NA          148,148 71 2.588   184  0.722        1     NA NA     NA     105  1   1   3 2015
-
+    ##             Player Goals Assists Points ShAtt Fouls Red Cards Yellow Cards
+    ## 25          Totals    71      60    202   544   217        NA           10
+    ## 26 Opponent Totals    27      22     76   296   297         1           27
+    ##    GC Goal App GGS Goalie Min. Plyd GA   GAA Saves SV Pct Shutouts G Wins
+    ## 25 NA       NA  NA          148,148 27 0.984    87  0.763        9     NA
+    ## 26 NA       NA  NA          148,148 71 2.588   184  0.722        1     NA
+    ##    G Loss DSaves Corners PS PSA GWG year
+    ## 25     NA     NA     156  1   2  22 2015
+    ## 26     NA     NA     105  1   1   3 2015
 
 Alright the Aggies had a good basketball team in 2015-2016, let's look at the player's season stat. Note for seasons Year1-Year2, Year2 is what you want to use in the functions. For example the 2015 to 2016 season is denoted for 2016.
 
 ``` r
-player_season_stats(697,2016,"MBB")
+kable(player_season_stats(697,2016,"MBB"))
 ```
 
-    ##    Jersey                Player  Yr Pos   Ht GP GS      MP FGM FGA   FG%
-    ## 1      01              Hogg, DJ  Fr   G  6-8 37  3  673:00  81 212 38.21
-    ## 2      21          Caruso, Alex  Sr   G  6-5 37 37 1067:00 111 221 50.23
-    ## 3      10 Trocha-Morelos, Tonny  So   C 6-10 37 11  644:00 103 223 46.19
-    ## 4      11      Collins, Anthony  Sr   G  6-1 37 37  950:00  52 138 37.68
-    ## 5      03         Gilder, Admon  Fr   G  6-3 37  0  755:00  87 202 43.07
-    ## 6      34          Davis, Tyler  Fr   C 6-10 36 34  820:00 150 229 65.50
-    ## 7      23         House, Danuel  Sr   G  6-7 36 34 1114:00 185 467 39.61
-    ## 8      42       Miller, Tavario  Jr   F  6-7 36  1  387:00  24  54 44.44
-    ## 9      12          Jones, Jalen  Sr   F  6-7 33 28  902:00 175 412 42.48
-    ## 10     25         Dobbins, Kyle  Sr   G  6-0 16  0   28:00   4   7 57.14
-    ## 11     13        Aparicio, Juan  Sr   G  6-4 13  0   22:00   2   6 33.33
-    ## 12     33         Distefano, TJ  Fr   G  6-2 11  0   14:00  NA   3    NA
-    ## 13     15        Thomas, Elijah  Fr   F  6-9  8  0   79:00  12  19 63.16
-    ## 14     00        Eubanks, Kobie N/A        -  8  0   36:00   4  12 33.33
-    ## 15     22          Byers, Frank  Fr   G  5-9  8  0    9:00   1   3 33.33
-    ##    3FG 3FGA  3FG%  FT FTA   FT% PTS   Avg ORebs DRebs Tot Reb  Avg AST TO
-    ## 1   46  139 33.09  22  34 64.71 230  6.22    28    78     106 2.86  35 24
-    ## 2   28   76 36.84  51  65 78.46 301  8.14    40    94     134 3.62 185 87
-    ## 3   30   81 37.04  24  48 50.00 260  7.03    61    96     157 4.24  37 27
-    ## 4   28   62 45.16  34  39 87.18 166  4.49     7    47      54 1.46 155 53
-    ## 5   35  101 34.65  51  67 76.12 260  7.03    16    70      86 2.32  50 27
-    ## 6   NA   NA    NA 105 168 62.50 405 11.25   106   118     224 6.22  26 58
-    ## 7   75  243 30.86 118 165 71.52 563 15.64    40   132     172 4.78  77 64
-    ## 8   NA   NA    NA  26  48 54.17  74  2.06    43    89     132 3.67  12 30
-    ## 9   34  105 32.38 120 171 70.18 504 15.27    64   172     236 7.15  21 53
-    ## 10  NA   NA    NA   8  15 53.33  16  1.00     2     1       3 0.19   5  6
-    ## 11   1    3 33.33  NA   2  0.00   5  0.38    NA    NA           NA   1  1
-    ## 12  NA    1  0.00  NA  NA    NA        NA    NA     2       2 0.18  NA  2
-    ## 13  NA   NA    NA   6  18 33.33  30  3.75     5    15      20 2.50   6  9
-    ## 14   4   11 36.36  NA  NA    NA  12  1.50     2     8      10 1.25   3  1
-    ## 15  NA    1  0.00  NA   1  0.00   2  0.25    NA    NA           NA  NA NA
-    ##    STL BLK Fouls Dbl Dbl Trpl Dbl DQ year
-    ## 1   20   5    44      NA       NA NA 2016
-    ## 2   77  14    92      NA       NA NA 2016
-    ## 3   15  23    67       1       NA NA 2016
-    ## 4   38   4    72      NA       NA NA 2016
-    ## 5   34   5    57      NA       NA NA 2016
-    ## 6   20  41    95       2       NA NA 2016
-    ## 7   19  11    51      NA       NA NA 2016
-    ## 8   10  12    62      NA       NA  2 2016
-    ## 9   22   9    94       5       NA  4 2016
-    ## 10   1  NA     2      NA       NA NA 2016
-    ## 11  NA   1     4      NA       NA NA 2016
-    ## 12  NA  NA     2      NA       NA NA 2016
-    ## 13  NA   8    23      NA       NA  2 2016
-    ## 14   3  NA     2      NA       NA NA 2016
-    ## 15   1  NA     1      NA       NA NA 2016
+| Jersey | Player                | Yr  | Pos | Ht   | GP  | GS  | MP      |  FGM| FGA |    FG%|  3FG|  3FGA|   3FG%|   FT|  FTA|    FT%| PTS |    Avg|  ORebs|  DRebs| Tot Reb |   Avg|  AST|   TO|  STL|  BLK|  Fouls|  Dbl Dbl| Trpl Dbl |   DQ|  year|
+|:-------|:----------------------|:----|:----|:-----|:----|:----|:--------|----:|:----|------:|----:|-----:|------:|----:|----:|------:|:----|------:|------:|------:|:--------|-----:|----:|----:|----:|----:|------:|--------:|:---------|----:|-----:|
+| 01     | Hogg, DJ              | Fr  | G   | 6-8  | 37  | 3   | 673:00  |   81| 212 |  38.21|   46|   139|  33.09|   22|   34|  64.71| 230 |   6.22|     28|     78| 106     |  2.86|   35|   24|   20|    5|     44|       NA| NA       |   NA|  2016|
+| 21     | Caruso, Alex          | Sr  | G   | 6-5  | 37  | 37  | 1067:00 |  111| 221 |  50.23|   28|    76|  36.84|   51|   65|  78.46| 301 |   8.14|     40|     94| 134     |  3.62|  185|   87|   77|   14|     92|       NA| NA       |   NA|  2016|
+| 10     | Trocha-Morelos, Tonny | So  | C   | 6-10 | 37  | 11  | 644:00  |  103| 223 |  46.19|   30|    81|  37.04|   24|   48|  50.00| 260 |   7.03|     61|     96| 157     |  4.24|   37|   27|   15|   23|     67|        1| NA       |   NA|  2016|
+| 11     | Collins, Anthony      | Sr  | G   | 6-1  | 37  | 37  | 950:00  |   52| 138 |  37.68|   28|    62|  45.16|   34|   39|  87.18| 166 |   4.49|      7|     47| 54      |  1.46|  155|   53|   38|    4|     72|       NA| NA       |   NA|  2016|
+| 03     | Gilder, Admon         | Fr  | G   | 6-3  | 37  | 0   | 755:00  |   87| 202 |  43.07|   35|   101|  34.65|   51|   67|  76.12| 260 |   7.03|     16|     70| 86      |  2.32|   50|   27|   34|    5|     57|       NA| NA       |   NA|  2016|
+| 34     | Davis, Tyler          | Fr  | C   | 6-10 | 36  | 34  | 820:00  |  150| 229 |  65.50|   NA|    NA|     NA|  105|  168|  62.50| 405 |  11.25|    106|    118| 224     |  6.22|   26|   58|   20|   41|     95|        2| NA       |   NA|  2016|
+| 23     | House, Danuel         | Sr  | G   | 6-7  | 36  | 34  | 1114:00 |  185| 467 |  39.61|   75|   243|  30.86|  118|  165|  71.52| 563 |  15.64|     40|    132| 172     |  4.78|   77|   64|   19|   11|     51|       NA| NA       |   NA|  2016|
+| 42     | Miller, Tavario       | Jr  | F   | 6-7  | 36  | 1   | 387:00  |   24| 54  |  44.44|   NA|    NA|     NA|   26|   48|  54.17| 74  |   2.06|     43|     89| 132     |  3.67|   12|   30|   10|   12|     62|       NA| NA       |    2|  2016|
+| 12     | Jones, Jalen          | Sr  | F   | 6-7  | 33  | 28  | 902:00  |  175| 412 |  42.48|   34|   105|  32.38|  120|  171|  70.18| 504 |  15.27|     64|    172| 236     |  7.15|   21|   53|   22|    9|     94|        5| NA       |    4|  2016|
+| 25     | Dobbins, Kyle         | Sr  | G   | 6-0  | 16  | 0   | 28:00   |    4| 7   |  57.14|   NA|    NA|     NA|    8|   15|  53.33| 16  |   1.00|      2|      1| 3       |  0.19|    5|    6|    1|   NA|      2|       NA| NA       |   NA|  2016|
+| 13     | Aparicio, Juan        | Sr  | G   | 6-4  | 13  | 0   | 22:00   |    2| 6   |  33.33|    1|     3|  33.33|   NA|    2|   0.00| 5   |   0.38|     NA|     NA|         |    NA|    1|    1|   NA|    1|      4|       NA| NA       |   NA|  2016|
+| 33     | Distefano, TJ         | Fr  | G   | 6-2  | 11  | 0   | 14:00   |   NA| 3   |     NA|   NA|     1|   0.00|   NA|   NA|     NA|     |     NA|     NA|      2| 2       |  0.18|   NA|    2|   NA|   NA|      2|       NA| NA       |   NA|  2016|
+| 15     | Thomas, Elijah        | Fr  | F   | 6-9  | 8   | 0   | 79:00   |   12| 19  |  63.16|   NA|    NA|     NA|    6|   18|  33.33| 30  |   3.75|      5|     15| 20      |  2.50|    6|    9|   NA|    8|     23|       NA| NA       |    2|  2016|
+| 00     | Eubanks, Kobie        | N/A |     | -    | 8   | 0   | 36:00   |    4| 12  |  33.33|    4|    11|  36.36|   NA|   NA|     NA| 12  |   1.50|      2|      8| 10      |  1.25|    3|    1|    3|   NA|      2|       NA| NA       |   NA|  2016|
+| 22     | Byers, Frank          | Fr  | G   | 5-9  | 8   | 0   | 9:00    |    1| 3   |  33.33|   NA|     1|   0.00|   NA|    1|   0.00| 2   |   0.25|     NA|     NA|         |    NA|   NA|   NA|    1|   NA|      1|       NA| NA       |   NA|  2016|
 
 Lastly let's take a look at the schedule and results for the TAMU Women's VolleyBall team.
 
