@@ -149,5 +149,9 @@ I'm looking to add functionality. What you should expect shortly:
 (1) game\_by\_game = Team stats by game.   
 (2) player\_ind\_stats = An individual player's stats by game.  
 (3) College Football Functionality.  
+(4) Attendance (per game/season avg)  
+(5) Play by Play data (as available)  
+(6) Weekly Rankings (AP and CFP)  
+(7) Recruiting Details (From 247 sports)  
 
-If you'd like to suggest anything (can be sport specific or general), create a github issue. Or tweet at me @msubbaiah1.
+If you'd like to suggest anything (can be sport specific or general), create a github issue. Or tweet at me [@msubbaiah1](https://twitter.com/msubbaiah1).
