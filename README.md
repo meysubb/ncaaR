@@ -142,7 +142,7 @@ Functionality
 
 This package should be functional for all sports except for Football. The next update should have full functionality for Football as well.
 
-There are three main functions that provide data of interest:
+There are three main functions that provide data of interest:  
 (1) team\_season\_stats = Overall team stats  
 (2) player\_season\_stats = Full season player stats   
 (3) team\_schedule = Team Schedule/Result/Site/Record  
@@ -150,7 +150,7 @@ There are three main functions that provide data of interest:
 Future Work
 -----------
 
-I'm looking to add functionality. What you should expect shortly:
+I'm looking to add functionality. What you should expect shortly:  
 (1) game\_by\_game = Team stats by game.   
 (2) player\_ind\_stats = An individual player's stats by game.  
 (3) College Football Functionality.  
