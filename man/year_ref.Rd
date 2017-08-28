@@ -16,10 +16,10 @@ The NCAA website uses different "year id's" for
 each sport. This function cross-references based on sport and year selection.
 }
 \examples{
-year_code(2016,"mens basketball")
-year_code(2015,"MBB")
+year_ref(2016,"mens basketball")
+year_ref(2015,"MBB")
 
-year_code(2015,"MBB")
+year_ref(2015,"MBB")
 }
 \keyword{Id}
 \keyword{Year}

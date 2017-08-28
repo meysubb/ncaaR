@@ -9,7 +9,9 @@ team_season_stats(team_id, year, sport)
 \arguments{
 \item{team_id}{Team ID from team_mapping}
 
-\item{year}{Actual Year (example: 2016 or 2015)}
+\item{year}{Actual Year (example: 2016 or 2015)
+Note for seasons Year1-Year2, Year2 is what you want to use in the functions.
+For example the 2015 to 2016 season is denoted for 2016.}
 
 \item{sport}{Tradiational Sport Name or Sport Code}
 }

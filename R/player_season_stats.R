@@ -4,7 +4,9 @@
 #' in a specific sport and year.
 #' @param team_id Team ID from team_mapping
 #' @param sport Tradiational Sport Name or Sport Code
-#' @param year Actual Year (example: 2016 or 2015)
+#' @param year Actual Year
+#' Note for seasons Year1-Year2, Year2 is what you want to use in the functions.
+#' For example, the 2015-2016 season is denoted for 2016.
 #' @importFrom magrittr "%>%"
 #' @importFrom xml2 "read_html"
 #' @importFrom rvest "html_table"
