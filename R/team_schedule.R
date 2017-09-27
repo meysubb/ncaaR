@@ -31,6 +31,7 @@ team_schedule <- function(team_id,year,sport){
   basic <- trimws(basic)
   basic_df <- as.data.frame(t(matrix(basic,nrow=3)),stringsAsFactors = FALSE)
   colnames(basic_df) <- c("Date","Opponent","Score")
+  ### Replace above lines with extract_base_schedule
   basic_df$site <- ifelse(startsWith(basic_df$Opponent,"@"),"Away","Home")
   basic_df$site[grep("@",str_sub(basic_df$Opponent, 2, -2))] <- "Neutral"
   basic_df$team <- team_name
